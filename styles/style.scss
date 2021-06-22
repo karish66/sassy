@@ -1,0 +1,36 @@
+@import "./variable";
+
+@mixin flexCenter($direction) {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+#one{
+    background-color: $primary1;
+    @include flexCenter(column);
+}
+
+#two{
+    background-color: $primary2;
+    @include flexCenter(column);
+    h1{
+        color :$primary3;
+    }
+    p{
+        color:$primary1;
+    }
+    button{
+        background-color : $primary3;
+        padding: 8px 10px;
+        border: 2px solid $primary1;
+        &:hover{
+            background-color: $primary1;
+        }
+    }
+}
+#three{
+    @extend #one;
+}
